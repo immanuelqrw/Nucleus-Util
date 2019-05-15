@@ -1,1 +1,1 @@
-rootProject.name = "nucleus-util"
+rootProject.name = "Nucleus-Util"
