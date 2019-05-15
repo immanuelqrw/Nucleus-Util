@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.dokka.gradle.DokkaTask
 
-group = "com.immanuelqrw.core"
+group = "com.github.immanuelqrw"
 version = "0.0.1-pre-alpha"
 
 apply(from = "gradle/constants.gradle.kts")
@@ -11,7 +11,6 @@ plugins {
     kotlin("jvm") version "1.3.31"
     id("org.jetbrains.kotlin.plugin.noarg") version "1.3.11"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.3.11"
-    id("org.sonarqube") version "2.6"
     id("org.jetbrains.dokka") version "0.9.17"
     idea
     `maven-publish`
