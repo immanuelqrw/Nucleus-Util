@@ -51,24 +51,3 @@ tasks {
         outputDirectory = "$buildDir/docs/dokka"
     }
 }
-
-val sonarHostUrl: String by project
-val sonarOrganization: String by project
-val sonarLogin: String by project
-
-sonarqube {
-    properties {
-        property("sonar.host.url", sonarHostUrl)
-        property("sonar.organization", sonarOrganization)
-        property("sonar.login", sonarLogin)
-
-        property("sonar.projectKey", "immanuelqrw_Nucleus-Util")
-        property("sonar.projectName", "Nucleus-Util")
-        property("sonar.projectVersion", version)
-    }
-}
-val sonar: Task = tasks["sonarqube"]
-
-val check by tasks.getting {
-    dependsOn(sonar)
-}
