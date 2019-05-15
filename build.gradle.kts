@@ -12,7 +12,6 @@ plugins {
     id("org.jetbrains.kotlin.plugin.noarg") version "1.3.11"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.3.11"
     id("org.jetbrains.kotlin.plugin.spring") version "1.3.11"
-    id("io.spring.dependency-management") version "1.0.6.RELEASE"
     id("org.sonarqube") version "2.6"
     id("org.jetbrains.dokka") version "0.9.17"
     idea
