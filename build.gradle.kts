@@ -19,6 +19,7 @@ plugins {
     id("org.sonarqube") version "2.6"
     id("org.jetbrains.dokka") version "0.9.17"
     idea
+    `maven-publish`
 }
 
 repositories {
@@ -82,4 +83,30 @@ val integrationTest by tasks
 val check by tasks.getting {
     dependsOn(integrationTest)
     dependsOn(sonar)
+}
+
+val sourcesJar by tasks.registering(Jar::class) {
+    classifier = "sources"
+    from(sourceSets["main"].allSource)
+}
+
+publishing {
+    repositories {
+        maven {
+            url = uri("http://localhost:8081/repository/maven-releases/")
+            credentials {
+                username = "admin"
+                password = "admin"
+            }
+        }
+    }
+    publications {
+        register("mavenJava", MavenPublication::class) {
+            groupId = projectGroup
+            artifactId = projectArtifact
+            version = projectVersion
+            from(components["java"])
+            artifact(sourcesJar.get())
+        }
+    }
 }
