@@ -90,13 +90,16 @@ val sourcesJar by tasks.registering(Jar::class) {
     from(sourceSets["main"].allSource)
 }
 
+val repoUsername: String by project
+val repoPassword: String by project
+
 publishing {
     repositories {
         maven {
             url = uri("http://localhost:8081/repository/maven-releases/")
             credentials {
-                username = "admin"
-                password = "admin"
+                username = repoUsername
+                password = repoPassword
             }
         }
     }
