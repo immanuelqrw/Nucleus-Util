@@ -90,7 +90,7 @@ val sourcesJar by tasks.registering(Jar::class) {
 }
 
 val repoUsername: String by project
-val repoPassword: String by project
+val repoToken: String by project
 
 publishing {
     repositories {
@@ -99,7 +99,7 @@ publishing {
             url = uri("https://maven.pkg.github.com/immanuelqrw/Nucleus-Util")
             credentials {
                 username = project.findProperty("gpr.user") as String? ?: repoUsername
-                password = project.findProperty("gpr.key") as String? ?: repoPassword
+                password = project.findProperty("gpr.key") as String? ?: repoToken
             }
         }
     }
