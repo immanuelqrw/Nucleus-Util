@@ -26,7 +26,7 @@ object Resource {
      * @param name Name of resource file
      * @return InputStream of resource
      */
-    private fun loadResource(name: String): InputStream {
+    fun loadResource(name: String): InputStream {
         return object {}.javaClass.getResourceAsStream(name)
     }
 
@@ -38,7 +38,7 @@ object Resource {
      * @param resourceName Name of resource file
      * @return Data class instance
      */
-    private inline fun <reified T> loadResourceFromFile(resourceName: String): T {
+    inline fun <reified T> loadResourceFromFile(resourceName: String): T {
         val inputStream: InputStream = loadResource(name = resourceName)
         return parseObjectFromInput(
             inputStream = inputStream,
@@ -55,7 +55,7 @@ object Resource {
      * @param objectMapper Object Mapper used to parse inputStream
      * @return Data class instance
      */
-    private inline fun <reified T> parseObjectFromInput(inputStream: InputStream, objectMapper: ObjectMapper): T {
+    inline fun <reified T> parseObjectFromInput(inputStream: InputStream, objectMapper: ObjectMapper): T {
         return objectMapper.readValue(inputStream)
     }
 }
