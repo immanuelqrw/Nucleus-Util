@@ -38,7 +38,8 @@ val packages: Array<Package> = arrayOf(
     Package("org.jetbrains.dokka", "dokka-gradle-plugin", dokkaVersion),
     *nucleusPackages,
     *jacksonPackages,
-    *jUnitPackages
+    *jUnitPackages,
+    Package("io.github.microutils", "kotlin-logging", "1.8.3")
 )
 
 val testPackages: Array<Package> = arrayOf(
@@ -47,6 +48,8 @@ val testPackages: Array<Package> = arrayOf(
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("test"))
+    testImplementation(kotlin("test-junit5"))
 
     packages.forEach { `package` ->
         implementation(`package`.groupId, `package`.artifactId, `package`.version)
