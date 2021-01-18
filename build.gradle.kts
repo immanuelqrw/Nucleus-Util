@@ -12,12 +12,12 @@ apply(from = "gradle/constants.gradle.kts")
 
 plugins {
     java
-    kotlin("jvm") version "1.3.72"
-    kotlin("plugin.noarg") version "1.3.72"
-    kotlin("plugin.allopen") version "1.3.72"
-    kotlin("plugin.spring") version "1.3.72"
-    id("org.sonarqube") version "2.6"
-    id("org.jetbrains.dokka") version "0.9.17"
+    kotlin("jvm") version "1.4.21"
+    kotlin("plugin.noarg") version "1.4.21"
+    kotlin("plugin.allopen") version "1.4.21"
+    kotlin("plugin.spring") version "1.4.21"
+    id("org.sonarqube") version "3.1"
+    id("org.jetbrains.dokka") version "1.4.20"
     idea
     `maven-publish`
 }

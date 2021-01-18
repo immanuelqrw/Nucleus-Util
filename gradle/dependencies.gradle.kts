@@ -39,7 +39,8 @@ val packages: Array<Package> = arrayOf(
     *nucleusPackages,
     *jacksonPackages,
     *jUnitPackages,
-    Package("io.github.microutils", "kotlin-logging", "1.8.3")
+    Package("io.github.microutils", "kotlin-logging-jvm", "2.0.4"),
+    Package("org.slf4j", "slf4j-simple", "1.7.30")
 )
 
 val testPackages: Array<Package> = arrayOf(
